@@ -19,27 +19,9 @@ namespace Day_6
         }
 
         static string GetEvenLetters(string word)
-        {
-            string result = string.Empty;
-
-            for(int i = 0; i < word.Length; i += 2)
-            {
-                result += Convert.ToString(word[i]);
-            }
-
-            return result;
-        }
+            => string.Join("", Enumerable.Range(0, word.Length).Where(x => x % 2 == 0).Select(x => word[x]));
 
         static string GetOddLetters(string word)
-        {
-            string result = string.Empty;
-
-            for (int i = 1; i < word.Length; i += 2)
-            {
-                result += Convert.ToString(word[i]);
-            }
-
-            return result;
-        }
+            => string.Join("", Enumerable.Range(1, word.Length-1).Where(x => x % 2 != 0).Select(x => word[x]));
     }
 }
