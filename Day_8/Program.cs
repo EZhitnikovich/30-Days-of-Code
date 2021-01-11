@@ -17,7 +17,7 @@ namespace Day_8
                 phoneBook.Add(temp[0], temp[1]);
             }
 
-            for(int i = 0; i < count; i++)
+            for(int i = 0; i < phoneBook.Count; i++)
             {
                 var name = Console.ReadLine();
                 FindNumberByName(phoneBook, name);
@@ -26,6 +26,11 @@ namespace Day_8
 
         static void FindNumberByName(Dictionary<string, string> phoneBook, string name)
         {
+            if(name == string.Empty)
+            {
+                return;
+            }
+
             string result = string.Empty;
             if(phoneBook.TryGetValue(name, out string number))
             {
