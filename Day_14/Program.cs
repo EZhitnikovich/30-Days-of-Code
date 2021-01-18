@@ -6,7 +6,15 @@ class Difference
     private int[] elements;
     public int maximumDifference;
 
-    // Add your code here
+    public Difference(int[] arr)
+    {
+        elements = arr;
+    }
+
+    public void ComputeDifference()
+    {
+        maximumDifference = elements.Max() - elements.Min();
+    }
 
 } // End of Difference Class
 
@@ -20,7 +28,7 @@ class Solution
 
         Difference d = new Difference(a);
 
-        d.computeDifference();
+        d.ComputeDifference();
 
         Console.Write(d.maximumDifference);
     }
