@@ -1,13 +1,26 @@
 ﻿using System;
 
-//Write your code here
+class Calculator
+{
+    public int Power(int n, int p)
+    {
+        if(n < 0 || p < 0)
+        {
+            throw new Exception("n and p should be non-negative");
+        }
+        else
+        {
+            return Convert.ToInt32(Math.Pow(n, p));
+        }
+    }
+}
 
 class Solution
 {
-    static void Main(String[] args)
+    static void Main(string[] args)
     {
         Calculator myCalculator = new Calculator();
-        int T = Int32.Parse(Console.ReadLine());
+        int T = int.Parse(Console.ReadLine());
         while (T-- > 0)
         {
             string[] num = Console.ReadLine().Split();
@@ -15,7 +28,7 @@ class Solution
             int p = int.Parse(num[1]);
             try
             {
-                int ans = myCalculator.power(n, p);
+                int ans = myCalculator.Power(n, p);
                 Console.WriteLine(ans);
             }
             catch (Exception e)
