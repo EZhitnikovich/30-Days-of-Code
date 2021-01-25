@@ -14,7 +14,20 @@ class Day_22
 
     static int getHeight(Node root)
     {
-        //Write your code here
+        if (root == null)
+            return 0;
+
+        int h1 = 0, h2 = 0;
+        
+        if(root.left != null)
+        {
+            h1 = getHeight(root.left) + 1;
+        }
+        if(root.right != null)
+        {
+            h2 = getHeight(root.right) + 1;
+        }
+        return h1 > h2 ? h1 : h2;
     }
 
     static Node insert(Node root, int data)
