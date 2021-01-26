@@ -18,7 +18,22 @@ class Solution
 
     static void levelOrder(Node root)
     {
-        //Write your code here
+        var q = new Queue<Node>();
+        q.Enqueue(root);
+        while(q.Count != 0)
+        {
+            var cur = q.Dequeue();
+            Console.Write($"{cur.data} ");
+
+            if(cur.left != null)
+            {
+                q.Enqueue(cur.left);
+            }
+            if(cur.right != null)
+            {
+                q.Enqueue(cur.right);
+            }
+        }
     }
 
     static Node insert(Node root, int data)
